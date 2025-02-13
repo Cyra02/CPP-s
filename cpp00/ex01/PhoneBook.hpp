@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:18:49 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/11 12:00:17 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/12 13:34:16 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class PhoneBook
 {
 		public:
+				PhoneBook();
 				void		addcontact();
 				//view
 		public:
