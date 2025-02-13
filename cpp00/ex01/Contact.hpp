@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:00:12 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/11 12:00:24 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:26:54 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ class Contacts
 			void	setNickname(std::string str);
 			void	setPhoneName(std::string str);
 			void	setSecret(std::string str);
+
+			const std::string& getFirstName(void) const;
+			const std::string& getLastName(void) const;
+			const std::string& getNickname(void) const;
+			const std::string& getPhoneName(void) const;
+			const std::string& getSecret(void) const;
+
+			
 	
 
 	private:
