@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:42:01 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/13 11:27:51 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:28:53 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,42 @@ void PhoneBook::addcontact()
 		std::cout << "Insert " + opcion[i] << std::endl;
 		std::cout << ">";
 		std::getline(std::cin, input);
+		if(i == 0)
+		{
+			while(input.empty())
+			{
+				std::cout << "Invalid Input" << std::endl;
+				std::cout << "Try Again: " << std::endl;
+				std::cout << ">";
+				std::getline(std::cin, input);
+				
+			}
+			new_contact.setFirstName(input);
+		}
+		if(i == 1)
+		{
+			while(input.empty())
+			{
+				std::cout << "Invalid Input" << std::endl;
+				std::cout << "Try Again: " << std::endl;
+				std::cout << ">";
+				std::getline(std::cin, input);
+				
+			}
+			new_contact.setLastName(input);
+		}
+		if(i == 2)
+		{
+			while(input.empty())
+			{
+				std::cout << "Invalid Input" << std::endl;
+				std::cout << "Try Again: " << std::endl;
+				std::cout << ">";
+				std::getline(std::cin, input);
+				
+			}
+			new_contact.setNickname(input);
+		}
 		if(i == 3)
 		{
 			while(input.empty() || !is_number(input))
@@ -54,8 +90,20 @@ void PhoneBook::addcontact()
 				std::cout << ">";
 				std::getline(std::cin, input);
 			}
-			new_contact.setFirstName(input);
+			new_contact.setPhoneName(input);
 			
+		}
+		if(i == 4)
+		{
+			while(input.empty())
+			{
+				std::cout << "Invalid Input" << std::endl;
+				std::cout << "Try Again: " << std::endl;
+				std::cout << ">";
+				std::getline(std::cin, input);
+				
+			}
+			new_contact.setSecret(input);
 		}
 	}
 	//std::cout << "venga" << new_contact.getFirstName() << std::endl;
@@ -68,15 +116,22 @@ void PhoneBook::addcontact()
 		this->count++;
 		this->contactos[count - 1] = new_contact;
 	}
-	
-	
-	/* std::cout << "Insert First Name" << std::endl;
-	std::getline(std::cin, input);
-	if (!is_number(input))
-		new_contact.setFirstName(input);
-	else
-		std::cout << "el nombre conio" << std::endl; */
 		
+	std::cout << ">Contact ADDED<" << std::endl;
+}
+void PhoneBook::getcontact(void)
+{
+	int i = 0;
+	if(count == 0)
+	{
+		std::cout << ">No contact ADDED<" << std::endl;
+		return;
+	}
+	std::cout << "\n|     Index|First Name| Last Name|  Nickname|\n" <<  std:endl;
+	while(i < count)
+	{
+		std::cout << 
+	}
 	
 }
 
