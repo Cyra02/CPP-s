@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:12:16 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/11 12:50:02 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:43:17 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void molonchi()
 {
 	std::cout <<
-"(          ,-.\n" <<
+"           ,-.\n" <<
 "           | |\n" <<
 "           | |\n" <<
 "  ,-\"\"\"\"\"\"\"-.|\n" <<
@@ -51,5 +51,7 @@ int main(void)
 		std::getline(std::cin, line);
 		if(line == "ADD")
 			phonebook.addcontact();
+		if(line == "SEARCH")
+			phonebook.getcontact();
 	}
 }

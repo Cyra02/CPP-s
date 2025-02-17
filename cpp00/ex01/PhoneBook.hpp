@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:18:49 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/12 13:34:16 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:40:06 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class PhoneBook
 		public:
 				PhoneBook();
 				void		addcontact();
+				void		getcontact();
 				//view
 		public:
 				size_t		count;
