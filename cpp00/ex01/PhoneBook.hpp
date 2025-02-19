@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:18:49 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/17 11:40:06 by cyra             ###   ########.fr       */
+/*   Updated: 2025/02/19 12:00:39 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ class PhoneBook
 				//view
 		public:
 				size_t		count;
+				size_t		count2;
 				Contacts	contactos[8];
+				Contacts	copy_contactos[8];
 				//numero maximo contactos
 				//el pprimero
 };
