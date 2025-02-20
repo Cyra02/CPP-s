@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:42:01 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/19 14:02:25 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:31:34 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void PhoneBook::addcontact()
 		std::cout << "Insert " + opcion[i] << std::endl;
 		std::cout << ">";
 		std::getline(std::cin, input);
+		if (input == "BACK")
+			return;
 		if(i == 0)
 		{
 			while(input.empty())
@@ -135,19 +137,19 @@ void PhoneBook::addcontact()
 }
 void PhoneBook::getcontact(void)
 {
-	size_t i = 0;
+	size_t i = 1;
 	if(count == 0)
 	{
 		std::cout << ">No contact ADDED<" << std::endl;
 		return;
 	}
 	std::cout << "\n|     Index|First Name| Last Name|  Nickname|\n" <<  std::endl;
-	while(i < count)
+	while(i <= count)
 	{
 		std::cout << "|" << std::right << std::setw(10) << i << "|";
-		std::cout << std::right << std::setw(10) << Field(contactos[i].getFirstName()) << "|" ;
-		std::cout << std::right << std::setw(10) << Field(contactos[i].getLastName()) << "|";
-		std::cout << std::right << std::setw(10) << Field(contactos[i].getNickname()) << "|";
+		std::cout << std::right << std::setw(10) << Field(contactos[i-1].getFirstName()) << "|" ;
+		std::cout << std::right << std::setw(10) << Field(contactos[i-1].getLastName()) << "|";
+		std::cout << std::right << std::setw(10) << Field(contactos[i-1].getNickname()) << "|";
 		std::cout << std::endl;
 		i++;
 	}
@@ -155,25 +157,36 @@ void PhoneBook::getcontact(void)
 	while(1)
 	{
 		std::cout << "Insert Contact INDEX" << std::endl;
+		std::cout << ">";
 		std::getline(std::cin, index);
 		if (index == "BACK")
 			return;
-		if(index.length() == 1 || index[0] >= '0' || index[0] <= '8')
+		if(index.size() == 1 && index[0] >= '0' && index[0] <= '8')
 		{
 			int index2 = index[0] - '1';
-			std::cout << "First Name" << contactos[index2].getFirstName() << std::endl;
-			std::cout << "Last Name" << contactos[index2].getLastName() << std::endl;
-			std::cout << "Nickname" << contactos[index2].getNickname() << std::endl;
-			std::cout << "Phonenumber" << contactos[index2].getPhoneName() << std::endl;
-			std::cout << "Darkest Secret" << contactos[index2].getSecret() << std::endl;
+			if(contactos[index2].getFirstName().empty() ||
+				contactos[index2].getLastName().empty() ||
+				contactos[index2].getNickname().empty() ||
+				contactos[index2].getPhoneName().empty() ||
+				contactos[index2].getSecret().empty())
+			{
+				std::cout << "Contact not filed" << std::endl;
+				return;
+				
+			}
 			
+			std::cout << "First Name: " << contactos[index2].getFirstName() << std::endl;
+			std::cout << "Last Name: " << contactos[index2].getLastName() << std::endl;
+			std::cout << "Nickname: " << contactos[index2].getNickname() << std::endl;
+			std::cout << "Phonenumber: " << contactos[index2].getPhoneName() << std::endl;
+			std::cout << "Darkest Secret: " << contactos[index2].getSecret() << std::endl;
 		}
 		else
 		{
-			std::cout << "Invalid Index: " <<  index[0] << std::endl;
+			std::cout << "Invalid Index: " << std::endl;
 			std::cout << "Try Again: " << std::endl;
 			std::cout << ">";
-			std::getline(std::cin, index);
+			//std::getline(std::cin, index);
 			
 		}
 		
