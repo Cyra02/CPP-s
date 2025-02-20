@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 13:12:16 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/02/19 12:25:53 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:34:59 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,15 @@ int main(void)
 	while(1)
 	{
 		molonchi();
+		std::cout << ">";
 		std::getline(std::cin, line);
-		if(line == "ADD" || line == "1")
+		if(line == "ADD" || line == "add")
 			phonebook.addcontact();
-		if(line == "SEARCH")
+		else if(line == "SEARCH" || line == "search")
 			phonebook.getcontact();
+		else if(line == "EXIT" || line == "exit")
+			break;
+		else
+			std::cout << "Invalid command" << std::endl;
 	}
 }
