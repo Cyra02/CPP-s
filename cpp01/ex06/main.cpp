@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 13:18:49 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/03/05 12:52:20 by ciestrad         ###   ########.fr       */
+/*   Created: 2025/03/05 11:37:55 by ciestrad          #+#    #+#             */
+/*   Updated: 2025/03/05 12:51:08 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
+#include <string.h>
 #include <iostream>
-#include <string>
-#include <iomanip>
-# include "Contact.hpp"
+#include "Harl.hpp"
 
-class PhoneBook
+int main()
 {
-		public:
-				PhoneBook();
-				void		addcontact();
-				void		getcontact();
-				//view
-		private:
-				size_t		count;
-				size_t		count2;
-				Contacts	contactos[8];
-				Contacts	copy_contactos[8];
-				//numero maximo contactos
-				//el pprimero
-};
+	Harl Harl;
 
-bool	is_number(std::string input);
-
-#endif
+	Harl.harlFilter("INFO");
+	return(0);
+	
+	
+}
