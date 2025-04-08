@@ -5,7 +5,8 @@ RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC	= 	main	\
-		ClapTrap
+		ClapTrap \
+		ScavTrap
 
 SRCS =	$(addsuffix .cpp, $(SRC))
 OBJ =	$(SRCS:%.cpp=%.o)

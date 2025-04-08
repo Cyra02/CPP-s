@@ -6,26 +6,31 @@
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:54:44 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/04/03 12:01:30 by cyra             ###   ########.fr       */
+/*   Updated: 2025/04/07 14:31:20 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap Cyra("Cyra");
-    ClapTrap Paco("Paco");
-    
-    std::cout << "ClapTrap -> " << Cyra.getname() << "\nHealth -> " << Cyra.getHealth() << "\nEnergy -> " << Cyra.getEnergy() << "\nAttack damage -> " << Cyra.getAttack() << std::endl;
-    std::cout << "paco ClapTrap -> " << Paco.getname() << "\nHealth -> " << Paco.getHealth() << "\nEnergy -> " << Paco.getEnergy() << "\nAttack damage -> " << Paco.getAttack() << std::endl;
+    std::string rogue = "Chillchuck";
+	ScavTrap	Mimic("Chest");
+    ClapTrap    Human("Cyra");
 
-    
-    Cyra.attack("Asier");
-    Cyra.takeDamage(1);
-    Cyra.beRepaired(5);
-    Paco = Cyra;
-    std::cout << "Paco ClapTrap -> " << Paco.getname() << "\nHealth -> " << Paco.getHealth() << "\nEnergy -> " << Paco.getEnergy() << "\nAttack damage -> " << Paco.getAttack() << std::endl;
-    Cyra.takeDamage(4);
-    return(0);
+
+    std::cout << "ClapTrap -> " << Human.getname() << "\nHealth -> " << Human.getHealth() << "\nEnergy -> " << Human.getEnergy() << "\nAttack damage -> " << Human.getAttack() << std::endl;
+    std::cout << "ScavTrap -> " << Mimic.getname() << "\nHealth -> " << Mimic.getHealth() << "\nEnergy -> " << Mimic.getEnergy() << "\nAttack damage -> " << Mimic.getAttack() << std::endl;
+
+    Mimic.attack("Cyra");
+    Human.takeDamage(20);
+	/*Mimic.attack(rogue);
+	Mimic.beRepaired(10);
+	Mimic.takeDamage(18);
+	Mimic.attack(rogue);
+	Mimic.guardGate();
+	Mimic.takeDamage(500);
+	Mimic.guardGate();
+	Mimic.attack(rogue);*/
 }

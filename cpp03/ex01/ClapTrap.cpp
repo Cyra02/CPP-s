@@ -6,7 +6,7 @@
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 10:49:21 by cyra              #+#    #+#             */
-/*   Updated: 2025/04/03 11:57:45 by cyra             ###   ########.fr       */
+/*   Updated: 2025/04/07 14:16:29 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,4 +134,24 @@ int ClapTrap::getEnergy() const
 std::string ClapTrap::getname() const
 {
     return(name);   
+}
+
+void ClapTrap::setHealth(int health)
+{
+    hit_points = health;
+}
+
+void ClapTrap::setEnergy(int new_energy)
+{
+    energy = new_energy;
+}
+
+void ClapTrap::setAttack(int new_attack)
+{
+    attack_damge = new_attack;
+}
+
+void ClapTrap::setname(std::string new_name)
+{
+    name = new_name;
 }
