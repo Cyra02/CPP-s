@@ -3,39 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:54:44 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/04/08 12:17:42 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/04/17 02:27:25 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    std::string rogue = "Chillchuck";
-	ScavTrap	Mimic("Chest");
-    ClapTrap    Human("Cyra");
-	FragTrap	Paco("Paco");
+   std::string rogue = "Chillchuck";
+	DiamondTrap	Mimic("Chest");
 
-
-    std::cout << "ClapTrap -> " << Human.getname() << "\nHealth -> " << Human.getHealth() << "\nEnergy -> " << Human.getEnergy() << "\nAttack damage -> " << Human.getAttack() << std::endl;
-    std::cout << "ScavTrap -> " << Mimic.getname() << "\nHealth -> " << Mimic.getHealth() << "\nEnergy -> " << Mimic.getEnergy() << "\nAttack damage -> " << Mimic.getAttack() << std::endl;
-	std::cout << "FragTrap -> " << Paco.getname() << "\nHealth -> " << Paco.getHealth() << "\nEnergy -> " << Paco.getEnergy() << "\nAttack damage -> " << Paco.getAttack() << std::endl;
-	
-    Mimic.attack("Paco");
-    Paco.takeDamage(20);
-	Mimic.guardGate();
-	Paco.highFivesGuys();
-	/*Mimic.attack(rogue);
+	std::cout << "DiamondTrap " << Mimic.getname() << " Has " << Mimic.getHealth() << " HP" << std::endl;
+	std::cout << "DiamondTrap " << Mimic.getname() << " Has " << Mimic.getEnergy() << " EP" << std::endl;
+	std::cout << "DiamondTrap " << Mimic.getname() << " Has " << Mimic.getHealth() << " AD" << std::endl;
+	Mimic.attack(rogue);
 	Mimic.beRepaired(10);
 	Mimic.takeDamage(18);
 	Mimic.attack(rogue);
-	Mimic.guardGate();
+	Mimic.whoAmI();
 	Mimic.takeDamage(500);
-	Mimic.guardGate();
-	Mimic.attack(rogue);*/
+	Mimic.attack(rogue);
 }

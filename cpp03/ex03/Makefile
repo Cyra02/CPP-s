@@ -7,7 +7,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC	= 	main	\
 		ClapTrap \
 		ScavTrap \
-		FragTrap
+		FragTrap \
+		DiamondTrap
 
 SRCS =	$(addsuffix .cpp, $(SRC))
 OBJ =	$(SRCS:%.cpp=%.o)

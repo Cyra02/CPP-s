@@ -6,7 +6,7 @@
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:54:33 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/04/07 14:15:24 by cyra             ###   ########.fr       */
+/*   Updated: 2025/04/17 02:13:13 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ClapTrap
 			void setAttack(int); //attack_damge
 			void setname(std::string);
 	
-	private:
+	protected:
 			std::string name;
 			int			hit_points;
 			int			energy;
