@@ -1,53 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 13:44:07 by cyra              #+#    #+#             */
-/*   Updated: 2025/04/22 14:30:11 by cyra             ###   ########.fr       */
+/*   Updated: 2025/04/22 13:46:11 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-    type = "Animal";
-    std::cout << "Constructor de Animal called" << std::endl;
+    type = "WrongAnimal";
+    std::cout << "Constructor de WrongAnimal called" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Animal Destructor Called" <<  std::endl;
+    std::cout << "WrongAnimal Destructor Called" <<  std::endl;
 }
 
-Animal::Animal(const Animal &to_copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &to_copy)
 {
     if (this == &to_copy)
 		return ;
     type = to_copy.type;
-    std::cout << "Animal contructor called Animal type set to " << to_copy.type << std::endl;
+    std::cout << "WrongAnimal contructor called Animal type set to " << to_copy.type << std::endl;
     
 }
 
-Animal &Animal::operator=(const Animal &to_copy)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &to_copy)
 {
     if (this == &to_copy)
 		return (*this);
     type = to_copy.type;
-    std::cout << "Animal operato= called Animal type set to " << to_copy.type << std::endl;
+    std::cout << "WrongAnimal operato= called Animal type set to " << to_copy.type << std::endl;
     return (*this);
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-    std::cout << "macarrones" << std::endl;
+    std::cout << "aaaaaaaaaaaahhhhhhhhh" << std::endl;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
     return(type);
+}
+
+void WrongAnimal::set_type(std::string new_type)
+{
+    type = new_type;
 }

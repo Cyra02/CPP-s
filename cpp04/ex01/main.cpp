@@ -6,40 +6,35 @@
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 13:44:05 by cyra              #+#    #+#             */
-/*   Updated: 2025/04/22 12:51:24 by cyra             ###   ########.fr       */
+/*   Updated: 2025/04/22 13:50:15 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-    /* const Animal* meta = new Animal();
-    const Animal* i = new Cat();
-    const Animal* j = new Dog();
+    const Animal		*animals[100];
 
-    std::cout << meta->getType() << " " << std::endl;
-    meta->makeSound();
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
+	for (size_t i = 0; i < 100; i++)
+	{
+		if (i % 2)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
 
-    std::cout << j->getType() << " " << std::endl;
-    j->makeSound(); */
+	for (size_t i = 0; i < 100; i++)
+		std::cout << animals[i]->getType() << " " << std::endl;
 
+	for (size_t i = 0; i < 100; i++)
+		animals[i]->makeSound();
 
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* i = new WrongCat();
+	for (size_t i = 0; i < 100; i++)
+		delete animals[i];
 
-    std::cout << meta->getType() << " " << std::endl;
-    meta->makeSound();
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-
-    delete meta;
-    delete i;
-    return 0;
+	return 0;
 }

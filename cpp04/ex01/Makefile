@@ -8,8 +8,7 @@ SRC	= 	main	\
 		Animal \
 		Cat \
 		Dog \
-		WrongAnimal \
-		WrongCat \
+		Brain
 
 SRCS =	$(addsuffix .cpp, $(SRC))
 OBJ =	$(SRCS:%.cpp=%.o)

@@ -5,11 +5,10 @@ RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC	= 	main	\
-		Animal \
+		Aanimal \
 		Cat \
 		Dog \
-		WrongAnimal \
-		WrongCat \
+		Brain
 
 SRCS =	$(addsuffix .cpp, $(SRC))
 OBJ =	$(SRCS:%.cpp=%.o)
