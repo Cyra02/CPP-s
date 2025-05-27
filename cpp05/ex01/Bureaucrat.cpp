@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:19 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/16 16:45:15 by cyra             ###   ########.fr       */
+/*   Updated: 2025/05/26 12:21:07 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@ Bureaucrat::Bureaucrat(std::string name, int grade): Buname(name)
             throw Bureaucrat::GradeTooHighException(); 
     Bugrade = grade;
     
+}
+
+void 			Bureaucrat::signForm(Form &form) const
+{
+	try {
+		form.beSigned(*this);
+		std::cout << this->getname() << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cout << this->getname() << " can't sign form " << form.getName(); 
+		std::cout << " because it's beyond it's jurisdiction (rank difference = " << this->getgrade() - form.getSigned() << ")" << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat(class Bureaucrat &model): Buname(model.Buname)

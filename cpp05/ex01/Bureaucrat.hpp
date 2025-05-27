@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:20 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/16 12:52:37 by cyra             ###   ########.fr       */
+/*   Updated: 2025/05/26 12:23:57 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-
+#include "Form.hpp"
 #include <iostream>
 #include <string.h>
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,6 +33,8 @@ class Bureaucrat
 
             void            demote();
             void            promote();
+
+			void 			signForm(Form &form) const;
 
             class GradeTooHighException: public std::exception
             {

@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 12:26:10 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/05/20 11:46:34 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/05/26 12:22:34 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <string.h>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -33,7 +35,7 @@ class Form
 			int			getSigned() const;
 			int			getExecute() const;
 
-			void		beSigned(class Bureaucrat &model);
+			void		beSigned(const Bureaucrat &bureaucrat);
 
 			class GradeTooLowException: public std::exception
 			{

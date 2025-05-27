@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:14:38 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/05/20 11:51:12 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/05/26 12:24:58 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,39 @@ int	Form::getExecute() const
 std::ostream &operator<<(std::ostream &stream, const Form &model)
 {
 	if(model.checkSigned())
-		stream << 
+		stream << "Form: " << model.getName() << " is signed ";
+	else	
+		stream << "Form: " << model.getName() << " is NOT signed ";
+
+	stream << model.getSigned() << " grade is needed for be signed and " << model.getExecute() << " grade for been executed ";
+	return(stream);
+}
+
+void		Form::beSigned(const Bureaucrat &bureaucrat)
+{
+	std::cout << bureaucrat.getgrade() << this->sign << std::endl;
+	if (bureaucrat.getgrade() > this->sign)
+		throw Form::GradeTooLowException();
+	checksign = true;
+	
+}
+
+Form::GradeTooLowException::GradeTooLowException()
+{
+	
+}
+
+Form::GradeTooHighException::GradeTooHighException()
+{
+	
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return("Form garde to LOW. Destruction");
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+    return("Form garde to HIGH. Destruction");
 }
