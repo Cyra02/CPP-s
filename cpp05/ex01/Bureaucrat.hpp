@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:20 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/26 12:23:57 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/06/02 11:06:17 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Bureaucrat
             void            demote();
             void            promote();
 
-			void 			signForm(Form &form) const;
+			void 			signForm(Form &Form) const;
 
             class GradeTooHighException: public std::exception
             {

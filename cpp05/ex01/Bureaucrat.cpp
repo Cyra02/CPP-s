@@ -6,7 +6,7 @@
 /*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:19 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/26 12:21:07 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:19:13 by ciestrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade): Buname(name)
     
 }
 
-void 			Bureaucrat::signForm(Form &form) const
+void 			Bureaucrat::signForm(Form &Form) const
 {
 	try {
-		form.beSigned(*this);
-		std::cout << this->getname() << " signed " << form.getName() << std::endl;
+		Form.beSigned(*this);
+		std::cout << this->getname() << " signed " << Form.getName() << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cout << this->getname() << " can't sign form " << form.getName(); 
-		std::cout << " because it's beyond it's jurisdiction (rank difference = " << this->getgrade() - form.getSigned() << ")" << std::endl;
+		std::cout << this->getname() << " can't sign AForm " << Form.getName(); 
+		std::cout << " because it's beyond it's jurisdiction (rank difference = " << this->getgrade() - Form.getSigned() << ")" << std::endl;
 	}
 }
 
