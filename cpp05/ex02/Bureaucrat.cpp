@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:19 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/29 11:15:00 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/06/03 10:41:27 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,21 @@ void 			Bureaucrat::signAForm(AForm &AForm) const
 		std::cout << " because it's beyond it's jurisdiction (rank difference = " << this->getgrade() - AForm.getSigned() << ")" << std::endl;
 	}
 }
+
+void            Bureaucrat::executeAform(AForm &form) const
+{
+    try
+    {
+        form.executed(*this);
+        std::cout << this->getname() << " executed" << form.getName();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    
+}
+
 
 Bureaucrat::Bureaucrat(class Bureaucrat &model): Buname(model.Buname)
 {

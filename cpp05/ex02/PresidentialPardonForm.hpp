@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 11:22:26 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/06/03 10:15:25 by cyra             ###   ########.fr       */
+/*   Created: 2025/06/03 10:07:27 by cyra              #+#    #+#             */
+/*   Updated: 2025/06/03 10:08:10 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <fstream> 
 #include <time.h>
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
-			ShrubberyCreationForm();
-			~ShrubberyCreationForm();
-			ShrubberyCreationForm(std::string target);
-			ShrubberyCreationForm(const ShrubberyCreationForm &Form);
+			PresidentialPardonForm();
+			~PresidentialPardonForm();
+			PresidentialPardonForm(std::string target);
+			PresidentialPardonForm(const PresidentialPardonForm &Form);
 	
-			ShrubberyCreationForm &operator=(const ShrubberyCreationForm &model);
+			PresidentialPardonForm &operator=(const PresidentialPardonForm &model);
 
 			std::string getTarget() const;
 
@@ -33,3 +32,4 @@ class ShrubberyCreationForm : public AForm
 	private:
 			std::string target;
 };
+

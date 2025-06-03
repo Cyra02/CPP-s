@@ -7,6 +7,9 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC	= 	main	\
 		Bureaucrat \
 		AForm \
+		ShrubberyCreationForm \
+		PresidentialPardonForm \
+		RobotomyRequestForm \
 
 SRCS =	$(addsuffix .cpp, $(SRC))
 OBJ =	$(SRCS:%.cpp=%.o)

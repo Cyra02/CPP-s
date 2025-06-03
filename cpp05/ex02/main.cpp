@@ -3,37 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:58:06 by cyra              #+#    #+#             */
-/*   Updated: 2025/06/02 11:05:11 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/06/03 10:42:31 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-	Bureaucrat		sebas("sebas", 70);
-	AForm			a32("a32", 60, 15);
+	std::string 			target("test");
+	Bureaucrat				pedro("Pedro Sánchez", 1);
+	Bureaucrat				sebas("Sebas", 10);
+	ShrubberyCreationForm	a12(target);
+	RobotomyRequestForm		a22(target);
+	PresidentialPardonForm	a32(target);
+	std::string				reason;
 
-	std::cout << sebas << std::endl;
+	std::cout << pedro << std::endl;
 	std::cout << a32 << std::endl;
 
-	try
-	{
-		AForm	a34("a34", -1, 25);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr <<  e.what() <<std::endl;
-	}
-
-
+	sebas.signAForm(a12);
+	sebas.signAForm(a22);
 	sebas.signAForm(a32);
-	for (size_t i = 0; i < 30; i++)	
-		sebas.promote();
-	sebas.signAForm(a32);
+	pedro.executeAform(a12);
+	pedro.executeAform(a22);
+	pedro.executeAform(a32);
+
 	return (0);
 };

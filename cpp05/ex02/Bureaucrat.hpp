@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:47:20 by cyra              #+#    #+#             */
-/*   Updated: 2025/05/29 11:15:00 by ciestrad         ###   ########.fr       */
+/*   Updated: 2025/06/03 10:19:56 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Bureaucrat
             void            promote();
 
 			void 			signAForm(AForm &AForm) const;
+            void            executeAform(AForm &Aform) const;
 
             class GradeTooHighException: public std::exception
             {

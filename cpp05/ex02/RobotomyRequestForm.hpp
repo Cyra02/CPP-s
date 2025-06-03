@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 11:22:26 by ciestrad          #+#    #+#             */
-/*   Updated: 2025/06/03 10:15:25 by cyra             ###   ########.fr       */
+/*   Created: 2025/06/03 09:53:15 by cyra              #+#    #+#             */
+/*   Updated: 2025/06/03 10:07:00 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <fstream> 
 #include <time.h>
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	public:
-			ShrubberyCreationForm();
-			~ShrubberyCreationForm();
-			ShrubberyCreationForm(std::string target);
-			ShrubberyCreationForm(const ShrubberyCreationForm &Form);
+			RobotomyRequestForm();
+			~RobotomyRequestForm();
+			RobotomyRequestForm(std::string target);
+			RobotomyRequestForm(const RobotomyRequestForm &Form);
 	
-			ShrubberyCreationForm &operator=(const ShrubberyCreationForm &model);
+			RobotomyRequestForm &operator=(const RobotomyRequestForm &model);
 
 			std::string getTarget() const;
 
@@ -33,3 +32,4 @@ class ShrubberyCreationForm : public AForm
 	private:
 			std::string target;
 };
+
